@@ -1,0 +1,203 @@
+/**************************** Ínicio do modal ****************************/
+/*Background do modal*/
+.modal {
+    display: none; /*Escondido por padrão*/
+    position: fixed; /*Fixado no lugar*/
+    z-index: 10; /*Fica no topo*/
+    padding-top: 50px; /*Localização da caixa*/
+    left: 0;
+    top: 0;
+    width: 100%; /*Largura total*/
+    height: 100%; /*Altura total*/
+    overflow: auto; /*Habilita o scroll se necessário*/
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*Conteúdo do modal*/
+.modal-content {
+    background-color: #f2f2f2;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    border-radius: 30px;
+}
+
+/*Botão de fechar*/
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/*Botão de fechar em hover e focus*/
+.close:hover, 
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Estilização título h2*/
+.modal h2 {
+    color: #010101;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/*Estilização do label*/
+.modal label {
+    color: #010101;
+}
+
+/*Estilização do formulário*/
+.modal form {
+    text-align: left;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+/*Estilização dos campos do formulário*/
+input{
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    border-color:#010101;
+    width: 350px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+/*Tira a borda amarela dos campos do formulário quando em foco*/
+.modal input:focus {
+    outline: 0;
+    outline-color: transparent;
+    outline-style: none;
+}
+
+/*Estilização dos botões do formulário*/
+.btn {
+    border-radius: 30px;
+    width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #010101;
+    color: #f2f2f2;
+    text-align: center;
+    margin-left: 60px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/*Função hover do botão*/
+.btn:hover {
+    background-color: #737373;
+    border: transparent;
+}
+
+/*Posição do olho no campo senha*/
+.modal i {
+    cursor: pointer;
+    float: right;
+    margin-right: 30px;
+    margin-top: -55px;
+    position: relative;
+    z-index: 2;
+}
+
+/*Visibilidade do fieldset*/
+fieldset {
+    display: none;
+    border: transparent;
+}
+
+/*Função JS*/
+.show_fieldset {
+    display: block;
+}
+
+/*Estilização dos botões sim e não*/
+/*Estilização do botão*/
+.bt {
+    border-radius: 30px;
+    width: 60px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #010101;
+    color: #f2f2f2;
+    text-align: center;
+    margin-left: 90px;
+    cursor: pointer;
+}
+
+/*Título modal inicial*/
+h3 {
+    text-align: center;
+}
+/**************************** Fim do modal ****************************/
+
+
+/**************************** Ínicio Responsividade do modal ****************************/
+/*Telas de 361px até 481px*/
+@media screen and (max-width: 481px) {
+    /*Ajusta o tamanho total para 70% da tela e centraliza o modal*/
+    .modal-content {
+        width: 70%;
+        margin: 0 auto;
+    }
+    /*Ajusta o tamanho dos campos para 90% do tamanho do modal*/
+    .modal-content input {
+        width: 90%;
+    }
+    /*Distância dos botões sim e não da esquerda*/
+    .modal-content .bt {
+        margin-left: 20%;
+    }
+    /*Distância do h2 da direita*/
+    .modal-content h2 {
+        margin-right: 5%;
+    }
+    /*Distância do botão do fieldset da esquerda*/
+    input[type=button] {
+        margin-left: 15px;
+    }
+    /*Distância do olho do canto direito do campo de senha*/
+    i {
+        margin-right: 8%;
+    }
+}
+
+/*Telas até 360px*/
+@media screen and (max-width: 360px) {
+    /*Ajusta o tamanho total para 70% da tela e centraliza o modal*/
+    .modal-content {
+        width: 70%;
+        margin: 0 auto;
+    }    
+    /*Ajusta o tamanho dos campos para 90% do tamanho do modal*/
+    .modal-content input {
+        width: 90%;
+    }
+    /*Distância dos botões sim e não da esquerda*/
+    .modal-content .bt {
+        margin-left: 15%;
+    }
+    /*Distância do h2 da direita*/
+    .modal-content h2 {
+        font-size: 23px;
+        margin-right: 5%;
+    }
+    /*Distância do botão do fieldset da esquerda*/
+    input[type=button] {
+        margin-left: 20px;
+    }
+    /*Distância do olho do canto direito do campo de senha*/
+    i {
+        margin-right: 5%;
+    }
+}
+/**************************** Fim Responsividade do modal ****************************/

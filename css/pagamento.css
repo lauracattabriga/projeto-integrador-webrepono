@@ -1,0 +1,970 @@
+/*Fonte Montserrat importada do google*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+
+    --color-1: #010101;
+    --color-2: #262626;
+    --color-3: #404040;
+    --color-4: #737373;
+    --color-5: #a6a6a6;
+    --color-6: #f2f2f2;
+    --color-7: #f3ece5;
+
+}
+
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+body {
+
+    background-color: var(--color-1);
+
+}
+
+header {
+
+
+    background-color: #ffffff;
+    width: 100%;
+    top: 0;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+
+}
+
+#container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+.client-inform {
+
+    margin: auto;
+    padding-top: 15px;
+    display: block;
+    width: 408px;
+    height: 500px;
+    
+}
+
+form {
+
+    text-align: left;
+    margin: auto;
+    font-size: 20px;
+
+}
+
+.cardUserInfo {
+
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    border: none;
+    width: 350px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+
+}
+
+.cardUserCvc {
+
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    border: none;
+    width: 100px;
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+
+}
+
+.btn {
+
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    background-color: #010101;
+    color: #f2f2f2;
+    text-align: center;
+    margin: 25px 75px 50px;
+
+} 
+
+
+.btn:hover {
+
+    background-color: #737373;
+    border: transparent;
+    cursor: pointer;
+
+}
+
+.modal-body > form > select {
+
+    padding: 3px 3px 5px 5px;
+    color: #010101;
+    background-color: #ccc;
+
+}
+
+.container-pess {
+
+    width: 500px;
+    height: 650px;
+    background-color: white;
+    border-radius: 30px;
+
+
+}
+
+.pess-inform {
+
+    margin: auto;
+    display: block;
+    width: 400px;
+    height: 565px;
+    background-color: #fff;
+    margin-top: 32px;
+    border: 1px solid #000;
+
+}
+
+.container-content {
+
+    margin: 10px 10px;
+
+}
+
+
+
+.pess-title { 
+    
+    padding: 10px 0px;
+    line-height: 1.4;
+    border-bottom: 1px solid #ccc;
+    padding-left: 0;
+    background-color: var(--color-6);
+    color: red;
+    text-align: center;
+    font-family: Arial;
+    font-weight: 200;
+    font-size: 16px;
+
+}
+
+.pess-dados {
+
+
+    border-bottom: 1px solid #ccc;
+    margin: 10px;
+    padding-bottom: 15px;
+
+}
+
+.pess-ende {
+
+    margin-top: 6px;
+
+}
+
+.pess-dados-t2 {
+
+    font-family: Arial;
+    color: red;
+    font-weight: bold;
+    
+
+}
+
+.pess-dados-t2-cep {
+
+    font-family: Arial;
+    color: #404040;
+    font-size: 14px;
+    padding-top: 16px;
+
+}
+
+.container-content-ende {
+
+    margin: 10px 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+
+}
+
+
+.pess-cep {
+
+    margin: 15px 10px;
+    
+
+}
+
+#cepUser {
+
+    margin-top: 5px;
+    width: auto;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 25px;
+    font-size: 16px;
+
+}
+
+#cepBuscaUser {
+
+    margin-top: 10px;
+    width: 90%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 25px;
+    font-size: 16px;
+
+}
+
+.userInfoHome {
+
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+
+}
+
+.container-entrega-aviso {
+
+    margin: 10px 10px;
+    padding-bottom: 15px;
+    
+}
+
+.entrega-aviso-span {
+
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+
+}
+
+.container-button {
+
+    margin: 32px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#button-user-f {
+
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    background-color: #010101;
+    color: #f2f2f2;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#button-user-f:hover {
+
+    background-color: #737373;
+    border: transparent;
+
+}
+
+
+.pess-formPag {
+
+    margin-top: 15px;
+    padding-bottom: 15px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pagForm-icon {
+
+    background-color: #F1F1F1;
+    padding: 16px 20px;
+    line-height: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+
+
+.pagFormTitle > span {
+
+    padding-left: 10px;
+    font-size: 14px;
+
+}
+
+#fade, #modal {
+
+    transition: .5s;
+    opacity: 1;
+    pointer-events: all;
+
+
+}
+
+#fade {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modal {
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 90%;
+    padding: 3.2rem;
+    border-radius: .5rem;
+
+}
+
+.modal-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.modal-header > button {
+
+    padding: .6em 1.2rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .9;
+    font-size: 14px;
+    transform: .2s;
+    
+}
+
+.modal-header > span {
+
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+
+
+}
+
+.modal-body p {
+
+    margin-bottom: 1rem;
+
+
+}
+
+#modal.hide, 
+#fade.hide {
+
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+#modal.hide {
+
+    top: 0;
+
+}
+
+#fadePix, #modalPix {
+
+    transition: .5s;
+    opacity: 1;
+    pointer-events: all;
+
+
+}
+
+#fadePix {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modalPix {
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 90%;
+    padding: 3.2rem;
+    border-radius: .5rem;
+
+
+}
+
+.modal-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.modal-header > button {
+
+    padding: .6em 1.2rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .9;
+    font-size: 14px;
+    transform: .2s;
+    
+}
+
+.modal-header > span {
+
+    
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+
+
+}
+
+.modal-body p {
+
+    margin-bottom: 1rem;
+
+
+}
+
+#modalPix.hide, 
+#fadePix.hide {
+
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+#modalPix.hide {
+
+    top: 0;
+
+}
+
+.pagPixBox-valor {
+
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    display: block;
+}
+
+.pagPixBox-desconto {
+
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(51, 124, 51);
+    display: block;
+    margin-top: 10px;
+
+}
+
+.pagPixBox-info {
+
+    font-size: 13px;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    margin: 12px;
+
+}
+
+#pagPixBox-codPix {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+#pagPixBox-codPixInfo {
+
+    word-break: break-all;
+
+}
+
+.pagPixBox-ins {
+
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 12px;
+
+}
+
+.pagPixBox-insItem {
+
+    margin-top: 10px;
+    display: flex;
+    align-items: start;
+    align-items: flex-start;
+    line-height: 1;
+
+}
+
+#pagPixBox-bnt {
+
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    background-color: #010101;
+    color: #f2f2f2;
+    text-align: center;
+    cursor: pointer;
+    margin: 25px 75px 50px;
+
+}
+
+#pagPixBox-qrcode {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#fadeBol, #modalBol {
+
+    transition: .5s;
+    opacity: 1;
+    pointer-events: all;
+
+
+}
+
+#fadeBol {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+#modalBol {
+
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 90%;
+    padding: 3.2rem;
+    border-radius: .5rem;
+
+
+}
+
+.modal-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.modal-header > button {
+
+    padding: .6em 1.2rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .9;
+    font-size: 14px;
+    transform: .2s;
+    
+}
+
+.modal-header > span {
+
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+
+
+}
+
+.modal-body p {
+
+    margin-bottom: 1rem;
+
+
+}
+
+#modalBol.hide, 
+#fadeBol.hide {
+
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+#modalBol.hide {
+
+    top: 0;
+
+}
+
+
+
+
+#content-boleto a { 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px;
+    border: 1px solid black;
+    color: #000;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
+#content-boxBoleto-info {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+}
+
+#content-boxBoleto-info .boxBoleto-cn {
+
+    font-size: 15px;
+    
+
+
+}
+
+.codBarra-boleto {
+
+    padding: 5px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #000;
+
+}
+
+#pagBolBox-bnt {
+
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    background-color: #010101;
+    color: #f2f2f2;
+    text-align: center;
+    cursor: pointer;
+    margin: 25px 75px 50px;
+    
+}
+
+.container-pess-2 {
+
+    width: 500px;
+    height: 650px;
+    background-color: white;
+    border-radius: 30px;
+    display: none;
+
+}
+
+.container-pess-3 {
+
+    width: 500px;
+    height: 650px;
+    background-color: white;
+    border-radius: 30px;
+    display: none;
+
+}
+
+.pess-inform {
+
+    margin: auto;
+    display: block;
+    width: 400px;
+    height: 565px;
+    background-color: #fff;
+    margin-top: 32px;
+    border: 1px solid #000;
+
+}
+
+.carrinho-caixa {
+
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin: 10px;
+    background-color: #F1F1F1;
+    padding: 10px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+
+}
+
+.carrinho-img {
+
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+
+}
+
+.carrinho-produto-titulo {
+
+    font-size: 18px;
+
+}
+
+.carrinho-preco {
+
+    font-size: 16px;
+
+}
+
+.carrinho-quantidade {
+
+    border: 1px solid var(--color-1);
+    outline-color: var(--color-5);
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+
+} 
+.carrinho-remover {
+
+    width: 22px;
+    color: red;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 450px) {
+
+    #container {
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+    }
+
+    .container-pess {
+
+        width: 90%;
+        margin-bottom: 10%;
+
+    }
+
+    .pess-inform {
+
+
+        width: 90%
+    
+    }
+
+    .container-entrega-aviso {
+        margin: -5px 10px;
+    }
+
+
+
+    .container-button {
+        margin: 7px 0px;
+
+    }
+
+    #button-user-f {
+
+        margin-bottom: 60%;
+        position: sticky;
+
+    }
+
+    .container-pess-2 {
+
+        width: 90%;
+        margin-bottom: 10%;
+
+
+    }
+
+    #modal {
+
+        top: 50%;
+        left: 50%;
+        max-width: 96%;
+
+    }
+
+    .cardUserInfo {
+
+        width: 255px;
+
+    }
+
+    .btn {
+
+        margin: 0;
+
+    }
+
+    #modalPix {
+
+        top: 49%;
+        left: 50%;
+        height: 93%;
+        max-width: 96%;
+        padding: 1.2rem;
+
+    }
+
+
+
+    #pagPixBox-bnt {
+
+        margin: 9px 31px 15px;
+
+    }
+
+    .container-pess-2 {
+
+        width: 90%;
+        margin-bottom: 10%;
+
+    }
+
+    #modalBol {
+
+        top: 41%;
+        left: 50%;
+        height: 60%;
+        max-width: 90%;
+        padding: 1.2rem;
+
+    }
+
+    .container-pess-3 {
+
+        width: 90%;
+        margin-bottom: 10%;
+
+    }
+
+    #pagBolBox-bnt {
+
+        margin: 15px 25px 15px;
+
+    }
+
+    .carrinho-caixa {
+
+        gap: 0.5rem;
+
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .btn {
+
+        margin: 15px;
+
+    }
+
+    #modalPix {
+
+        top: 49%;
+        left: 50%;
+        height: 93%;
+        max-width: 96%;
+        padding: 1.2rem;
+
+    }
+
+
+}

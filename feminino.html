@@ -1,0 +1,3102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/feminino.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <title>Repono - Feminino</title>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <a href="inicial.html"><img class="logo" src="img/repono2.png" alt="logo"></a>
+            <a href="inicial.html"><img class="logo2" src="img/repono4.png" alt="logo"></a>
+            <input id="pesquisa" type="text" placeholder="Pesquisar">
+            <a id="user" class="cad" href="#" target="_self" ><span class="material-symbols-outlined">account_circle</span></a>
+            <a id="carrinho-icone" class="cad" href="#" target="_self"><span class="material-symbols-outlined">shopping_cart</span></a>
+            <a href="#" class="menu-bars cad" id="show-menu">
+                <span class="material-symbols-outlined">menu</span>
+            </a>
+        </div>
+        <nav id="nav-menu">
+            <ul class="nav-menu-items">
+                <div id="navbar-toggle">
+                    <a href="#" class="menu-bars" id="hide-menu">
+                        <span class="material-symbols-outlined nav-icon">menu</span>
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="dropdown">
+                        <button onclick="document.location='feminino.html'"  class="dropbtn nav-text">Feminino <span id="mobile-btn" class="material-symbols-outlined">expand_more</span></button>
+                        <div class="dropdown-content">
+                            <a class="descer" href="feminino.html#blusas">Blusas</a>
+                            <a class="descer" href="feminino.html#calcas">Calças</a>
+                            <a class="descer" href="feminino.html#shorts">Shorts e Saias</a>
+                            <a class="descer" href="feminino.html#vestidos">Vestidos</a>
+                            <a class="descer" href="feminino.html#conjuntos">Conjuntos</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="document.location='masculino.html'" class="dropbtn nav-text">Masculino <span id="mobile-btn" class="material-symbols-outlined">expand_more</span></button>
+                        <div class="dropdown-content">
+                            <a class="descer" href="masculino.html#blusas">Blusas</a>
+                            <a class="descer" href="masculino.html#camisas">Camisas</a>
+                            <a class="descer" href="masculino.html#conjuntos">Conjuntos</a>
+                            <a class="descer" href="masculino.html#bermudas">Bermudas</a>
+                            <a class="descer" href="masculino.html#calcas">Calças</a>
+                        </div>
+                    </div>
+                    <button onclick="document.location='colecao.html'" class="dropbtn nav-text">Coleção</button>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Início Modal Cadastro e Login -->
+        <div id="myModal" class="modal">
+            <!--Conteúdo do modal-->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Já possui uma conta?</h3>
+                <button class="bt" onclick="showFieldset('login', 'cadastro')">Sim</button>
+                <button class="bt" onclick="showFieldset('cadastro', 'login')">Não</button>
+                <form action=""> <!--Ação do botão-->
+                    <!--Título-->
+                        <fieldset id="cadastro">
+                            <h2>Crie Sua Conta</h2>
+                            <!--Formulário-->
+                            <label for="nome"><strong>Nome:</strong></label>
+                            <input type="text" placeholder="Nome">
+                            <label for="email"><strong>Email:</strong></label>
+                            <input type="text" placeholder="Email">
+                            <label for="senha"><strong>Senha:</strong></label>
+                            <input id="senha" type="password" placeholder="Senha">
+                            <!--Olho e função JS-->
+                            <i class="material-symbols-outlined" id="olho" onclick="toggle()">visibility</i>
+                            <!--Botão de criar conta-->
+                            <input class="btn" type="button" value="Criar Conta">
+                        </fieldset>
+                        <fieldset id="login">
+                            <h2>Faça Login</h3>
+                                <!--Formulário-->
+                                <label for="femail"><strong>E-mail:</strong></label>
+                                <input type="email" placeholder="Email"><br>
+                                <label for="fsenha"><strong>Senha:</strong></label>
+                                <input id="senha2" type="password" placeholder="Senha">
+                                <!--Olho e função JS-->
+                                <i class="material-symbols-outlined" id="olho2" onclick="toggle2()">visibility</i>
+                                <!--Botão de entrar-->
+                                <input class="btn" type="button" value="Entrar" onclick="logar(); return false">
+                        </fieldset>
+                    </form>
+            </div>
+        </div>
+        <!-- Fim Modal Cadastro e Login -->
+
+        <!-- Início Carrinho -->
+        <!--nav-->
+        <div class="nav container">
+            <!--carrinho-->
+            <div class="carrinho">
+                <h2 class="carrinho-titulo">Seu Carrinho</h2>
+                <!--Conteudo-->
+                <div class="carrinho-conteudo"></div>
+                <!--Total-->
+                <div class="total">
+                    <div class="total-titulo">Total</div>
+                    <div class="total-preco">R$0.00</div>
+                </div>
+                <!--Botão-->
+                <button type="botao" class="btn-comprar" onclick="document.location='pagamento.html'">Comprar agora</button>
+                <!--Fechar carrinho-->
+                <span id="fechar-carrinho">&times;</span>
+            </div>
+        </div>
+        <!-- Fim Carrinho -->
+
+        <!------------------------- Carrossel dos produtos ----------------------------->
+        <!-------- Blusas ------->
+
+         <section class="product">
+            <!--Título acima das roupas-->
+            <h2 id="blusas" class="product-category">Blusas</h2>
+            <!--Botão de anterior-->
+            <button class="pre-btn">&lt;</button>
+            <!--Botão de próximo-->
+            <button class="nxt-btn">&gt;</button>
+            <!--Container dos produtos-->
+            <div class="product-container">
+                
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-blusao-listrado.html"><img class="product-thumb produto-img" src="roupas c/blusas/blusao listrado.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Blusão UNITY listrado</h2>
+                                    <span class="preco">R$39.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Blusa Unity listrada</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$39,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-cropped-rosa.html"><img class="product-thumb produto-img" src="roupas c/blusas/croped rosa.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped Los Angeles rosa</h2>
+                                    <span class="preco">R$25.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped Los Angeles rosa</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$25,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-cropped-botao.html"><img class="product-thumb produto-img" src="roupas c/blusas/croped botão.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped Rosa</h2>
+                                    <span class="preco">R$19.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped Rosa</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$19,99</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-blusao-branco.html"><img class="product-thumb produto-img" src="roupas c/blusas/blusao branco.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Blusão branca Brooklyn</h2>
+                                    <span class="preco">R$30.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Blusão branca Brooklyn</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$30,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-cropped-princesa.html"><img class="product-thumb produto-img" src="roupas c/blusas/croped princesa.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped rose princesa</h2>
+                                    <span class="preco">R$59.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped rose princesa</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$59,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/croped preto sol.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped preto sol e lua</h2>
+                                    <span class="preco">R$25.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped preto sol e lua</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$25,99</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/blusa  preto longa.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped manga longa preto lisa</h2>
+                                    <span class="preco">R$34.50</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped manga longa preto lisa</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$34,50</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/croped rosa escuro.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped rosa escuro</h2>
+                                    <span class="preco">R$39.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped rosa escuro</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$39,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="produto9.html"><img class="product-thumb produto-img" src="roupas c/blusas/blusao bege.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Blusão beje</h2>
+                                    <span class="preco">R$35.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Blusão beje</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$35,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/croped brilho.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped com Brilho</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped com Brilho</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                     <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/croped verde.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped verde amarração</h2>
+                                    <span class="preco">R$20.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped verde amarração</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$20,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/brilho.jpg" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped prata lantejolas</h2>
+                                    <span class="preco">R$35.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                 <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped prata lantejolas</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$35,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/croped lua.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped estação da lua</h2>
+                                    <span class="preco">R$19.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                     <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped estação da lua</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$19,99</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                     <!--Thumb / foto do produto-->
+                     <img class="product-thumb produto-img" src="roupas c/blusas/croped branco.png" alt="imagem 1">
+                     <!--Carrinho-->
+                     <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Cropped de manga branco</h2>
+                                <span class="preco">R$25.00</span>
+                            </div>
+                        </div>
+                    </section>
+                     <!--Botão de Adicionar a sacola-->
+                     <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                     <p class="product-short-description">Cropped de manga branco</p>
+                     <!--Preço com desconto-->
+                        <span class="price">R$25,00</span>
+                    </div>
+                </div>
+
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                <!--Imagem dos produtos-->
+                <div class="product-image">
+                    <!--Thumb / foto do produto-->
+                    <img class="product-thumb produto-img" src="roupas c/blusas/croped canelado preto 15a.jpg" alt="imagem 1">
+                    <!--Carrinho-->
+                    <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Cropped amarração preto</h2>
+                                <span class="preco">R$30.00</span>
+                            </div>
+                        </div>
+                    </section>
+                    <!--Botão de Adicionar a sacola-->
+                    <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                </div>
+                <!--Informações do produto-->
+                <div class="product-info">
+                    <!--Descrição do produto-->
+                    <p class="product-short-description">Cropped amarração preto</p>
+                    <!--Preço com desconto-->
+                    <span class="price">R$30,00</span>
+                </div>
+
+                </div>
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                     <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/croped borboleta.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped butterfly</h2>
+                                    <span class="preco">R$25.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                     </div>
+                    <!--Informações do produto-->
+                        <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped butterfly</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$25,00</span>
+                     </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/corpete branco.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Corpete branco</h2>
+                                    <span class="preco">R$39.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Corpete branco</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$39,90</span>
+                     </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/blusao emoji.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Blusão preto basico</h2>
+                                    <span class="preco">R$29.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                     <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Blusão preto basico</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$29,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/blusao boboleta.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Blusão butterfly</h2>
+                                    <span class="preco">R$35.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Blusão butterfly</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$35,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/blusas/croped neon.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Cropped preto refletor</h2>
+                                    <span class="preco">R$40.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Cropped preto refletor</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$40,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-------------------------Calças------------------------------>
+
+        <section class="product">
+            <!--Título acima das roupas-->
+            <h2 id="calcas" class="product-category">Calças</h2>
+            <!--Botão de anterior-->
+            <button class="pre-btn">&lt;</button>
+            <!--Botão de próximo-->
+            <button class="nxt-btn">&gt;</button>
+
+            <!--Container dos produtos-->
+            <div class="product-container">
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-calca-jeans-preta.html"><img class="product-thumb produto-img" src="roupas c/calças/calça coraçao.jpg" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça jeans preta</h2>
+                                    <span class="preco">R$80.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça jeans preta</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$80,00</span>
+                    </div>
+    
+                </div>
+                 <!--Card dos produtos-->
+                 <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-calca-jeans-clara.html"><img class="product-thumb produto-img" src="roupas c/calças/calça jens claro.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça jeans clara lisa</h2>
+                                    <span class="preco">R$70.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça jeans clara lisa</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$70,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-calca-rasgada-joelho.html"><img class="product-thumb produto-img" src="roupas c/calças/preto joelho.jpg" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça rasgada no joelho</h2>
+                                    <span class="preco">R$60.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça rasgada no joelho</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$60,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                 
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href=""><img class="product-thumb produto-img" src="roupas c/calças/jeans claro.jpg" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça wide lwg</h2>
+                                    <span class="preco">R$100.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça wide lwg</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$100,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-calca-estilo.html"><img class="product-thumb produto-img" src="roupas c/calças/calça estilo.jpg" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça com correntes</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça com correntes</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                 <!--Card dos produtos-->
+                 <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-calca-borboleta.html"><img class="product-thumb produto-img" src="roupas c/calças/calça borboleta.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça butterfly</h2>
+                                    <span class="preco">R$110.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça butterfly</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$110,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/calças/calça beje.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça bege social</h2>
+                                    <span class="preco">R$45.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça bege social</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$45,99</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/calças/calça corda.jpg" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça jogger</h2>
+                                    <span class="preco">R$30.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça jogger</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$30,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/calças/jens joelho.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça jeans rasgada</h2>
+                                    <span class="preco">R$120.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça jeans rasgada</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$120,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/calças/calça verde.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça de moletom verde</h2>
+                                    <span class="preco">R$40.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Calça de moletom verde</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$40,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/calças/jens escuro.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça jeans escuro</h2>
+                                    <span class="preco">R$70.00</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça jeans escuro</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$70,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/calças/preto e branco.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça de moletom</h2>
+                                    <span class="preco">R$80.00</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça de moletom</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$80,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/calças/jens joelho.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça jenas rasgada no joelho</h2>
+                                    <span class="preco">R$69.90</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça jenas rasgada no joelho</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$69,90</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/calças/calça xadreza.jpg" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça xadrez vermelha</h2>
+                                    <span class="preco">R$30.00</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça xadrez vermelha</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$30,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/calças/calça jogger.jpg" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça jogger champanhe</h2>
+                                    <span class="preco">R$39.90</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça jogger champanhe</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$39,90</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/calças/calça moletom preta.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça de moletom mesclada</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça de moletom mesclada</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$50,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/calças/calça moletom.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça de moletom de caveira</h2>
+                                    <span class="preco">R$114.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça de moletom de caveira</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$114,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/calças/calça social.jpg" alt="imagem 1">
+                       <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça pantalona</h2>
+                                    <span class="preco">R$109.00</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça pantalona</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$109,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/calças/wid leg.jpg" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça wid lwg preta</h2>
+                                    <span class="preco">R$100.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça wid lwg preta</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$100,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/calças/calça branca.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Calça branca rasgada</h2>
+                                    <span class="preco">R$90.00</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Calça branca rasgada</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$90,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!---------------------------------Shorts e Saias--------------------------------------------->
+
+        <section class="product">
+            <!--Título acima das roupas-->
+            <h2 id="shorts" class="product-category">Shorts e Saias</h2>
+            <!--Botão de anterior-->
+            <button class="pre-btn">&lt;</button>
+            <!--Botão de próximo-->
+            <button class="nxt-btn">&gt;</button>
+            <!--Container dos produtos-->
+            <div class="product-container">
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-saia-floral.html"><img class="product-thumb produto-img" src="roupas c/saias/saia floral.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Saia longa floral</h2>
+                                    <span class="preco">R$40.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Saia longa floral</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$40,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-short-jeans.html"><img class="product-thumb produto-img" src="roupas c/short/short jens.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Short jeans claro</h2>
+                                    <span class="preco">R$20.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Short jeans claro</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$20,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-saia-beije.html"><img class="product-thumb produto-img" src="roupas c/saias/saia beje.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Saia com bolso bege</h2>
+                                    <span class="preco">R$55.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Saia com bolso bege</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$55,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-short-fogo.html"><img class="product-thumb produto-img" src="roupas c/short/short fogo.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Short jeans preto</h2>
+                                    <span class="preco">R$70.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Short jeans preto</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$70,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="produto6.html"><img class="product-thumb produto-img" src="roupas c/saias/jeans escuro.jpg" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Saia jeans escuro</h2>
+                                    <span class="preco">R$60.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Saia jeans escuro</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$60,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <a href="feminino-short-emoji.html"><img class="product-thumb produto-img" src="roupas c/short/short emoji.png" alt="imagem 1"></a>
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Short jeans emojis</h2>
+                                    <span class="preco">R$100.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Short jeans emojis</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$100,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/saias/saia tule.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Saia de tule brilhante</h2>
+                                    <span class="preco">R$69.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Saia de tule brilhante</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$69,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/short/short branco.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Short jeans claro</h2>
+                                    <span class="preco">R$50.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Short jeans claro</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,99</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/saias/preto festa.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Saia de festa</h2>
+                                    <span class="preco">R$40.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Saia de festa</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$40,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/short/short verde.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Short jeans verde</h2>
+                                    <span class="preco">R$33.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Short jeans verde</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$33,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/saias/saia escolar.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Saia branca curta</h2>
+                                <span class="preco">R$40.00</span>
+                            </div>
+                        </div>
+                    </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Saia branca curta</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$40,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/short/short jens claro.jpg" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Short jeans claro</h2>
+                                <span class="preco">R$45.00</span>
+                            </div>
+                        </div>
+                    </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Short jeans claro</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$45,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/saias/saia cinza.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Saia cinza com bolsos</h2>
+                                <span class="preco">R$60.00</span>
+                            </div>
+                        </div>
+                    </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Saia cinza com bolsos</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$60,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/short/short escuro.jpg" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Short escuro</h2>
+                                <span class="preco">R$34.00</span>
+                            </div>
+                        </div>
+                    </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Short escuro</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$34,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/saias/saia cetim.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Saia social preta cetim</h2>
+                                    <span class="preco">R$60.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Saia social preta cetim</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$60,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/short/short corrente.jpg" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Short jeans com correntes</h2>
+                                    <span class="preco">R$60.00</span>
+                                </div>
+                            </div>
+                        </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Short jeans com correntes</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$60,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/saias/saia amarela.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Saia floral amarela</h2>
+                                    <span class="preco">R$30.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Saia floral amarela</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$30,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/short/short sol.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Short jeans sol e lua</h2>
+                                    <span class="preco">R$90.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Short jeans sol e lua</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$90,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/saias/saia amarraçao.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Saia longa c/amarração lateral</h2>
+                                    <span class="preco">R$30.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Saia longa c/amarração lateral</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$30,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/short/short preto.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Short jeans rasgado preto</h2>
+                                    <span class="preco">R$40.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Short jeans rasgado preto</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$40,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-------------------------Vestidos------------------------------->
+        
+        <section class="product">
+            <!--Título acima das roupas-->
+            <h2 id="vestidos" class="product-category">Vestidos</h2>
+            <!--Botão de anterior-->
+            <button class="pre-btn">&lt;</button>
+            <!--Botão de próximo-->
+            <button class="nxt-btn">&gt;</button>
+            <!--Container dos produtos-->
+            <div class="product-container">
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido verde florido.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido floral verde claro</h2>
+                                    <span class="preco">R$30.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido floral verde claro</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$30,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido preto.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido canelado preto</h2>
+                                    <span class="preco">R$55.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido canelado preto</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$55,99</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido rosa.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido rosa Camada Tiered</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido rosa Camada Tiered</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido floral 13a.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido floral decotado</h2>
+                                    <span class="preco">R$75.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido floral decotado</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$75,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido pelo.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido de pelinhos branco</h2>
+                                    <span class="preco">R$40.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido de pelinhos branco</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$40,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido azul escuro.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido canelado azul escuro</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido canelado azul escuro</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido verde.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido verde decotes</h2>
+                                    <span class="preco">R$70.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido verde decotes</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$70,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/macacao.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido Branco</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido Branco</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido nude.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido longo nude</h2>
+                                    <span class="preco">R$40.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido longo nude</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$40,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido v claro.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido verde claro</h2>
+                                    <span class="preco">R$60.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido verde claro</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$60,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/vertidos/vestido brilho.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Vestido preto c/ brilho</h2>
+                                <span class="preco">R$70.00</span>
+                            </div>
+                        </div>
+                    </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Vestido preto c/ brilho</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$70,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/vertidos/vestido vinho.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Vestido vinho decotado</h2>
+                                <span class="preco">R$75.00</span>
+                            </div>
+                        </div>
+                    </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Vestido vinho decotado</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$75,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido c detalhes.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido branco c/ detalhes</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Vestido branco c/ detalhes</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$50,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido social.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido preto social</h2>
+                                    <span class="preco">R$49.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido preto social</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$49,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido chevron.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido azul chevron</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido azul chevron</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                   <!--Imagem dos produtos-->
+                   <div class="product-image">
+                       <!--Thumb / foto do produto-->
+                       <img class="product-thumb produto-img" src="roupas c/vertidos/vestido lilas.png" alt="imagem 1">
+                       <!--Carrinho-->
+                       <section class="shopp container">
+                        <!--Conteudo-->
+                        <div class="conteudo-loja">
+                            <!--Caixa 1-->
+                            <div class="produto-box">
+                                <h2 class="produto-titulo">Vestido lilas p/ festas</h2>
+                                <span class="preco">R$120.00</span>
+                            </div>
+                        </div>
+                    </section>
+                       <!--Botão de Adicionar a sacola-->
+                       <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                   </div>
+                   <!--Informações do produto-->
+                   <div class="product-info">
+                       <!--Descrição do produto-->
+                       <p class="product-short-description">Vestido lilas p/ festas</p>
+                       <!--Preço com desconto-->
+                       <span class="price">R$120,00</span>
+                   </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido azul.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido azul claro</h2>
+                                    <span class="preco">R$80.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido azul claro</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$80,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido curto nude.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido nude c/ brilho</h2>
+                                    <span class="preco">R$100.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido nude c/ brilho</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$100,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido floral rosa.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido floral rosa</h2>
+                                    <span class="preco">R$79.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido floral rosa</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$79,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/vertidos/vestido de festa.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Vestido paete branco</h2>
+                                    <span class="preco">R$91.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Vestido paete branco</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$91,99</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-------------------------Conjuntos------------------------------->
+        
+        <section class="product">
+            <!--Título acima das roupas-->
+            <h2 id="conjuntos" class="product-category">Conjuntos</h2>
+            <!--Botão de anterior-->
+            <button class="pre-btn">&lt;</button>
+            <!--Botão de próximo-->
+            <button class="nxt-btn">&gt;</button>
+            <!--Container dos produtos-->
+            <div class="product-container">
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto bege.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto moletom bege</h2>
+                                    <span class="preco">R$90.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto moletom bege</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$90,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto bolinha.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto croped + saia</h2>
+                                    <span class="preco">R$85.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto croped + saia</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$85,99</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto branco.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto praiano branco</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto praiano branco</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto brilho.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto de festa</h2>
+                                    <span class="preco">R$85.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto de festa</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$85,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto cogumelo.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto de moletom</h2>
+                                    <span class="preco">R$60.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto de moletom</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$60,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto duas cores 10.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto croped e saia</h2>
+                                    <span class="preco">R$60.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto croped e saia</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$60,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto marrom.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto de moletom marrom</h2>
+                                    <span class="preco">R$70.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto de moletom marrom</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$70,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto mestiço.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto preto e branco</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto preto e branco</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$50,00</span>
+                    </div>       
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto praiano.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto floral praiano</h2>
+                                    <span class="preco">R$40.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto floral praiano</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$40,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto moletom bege.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto de moletom bege</h2>
+                                    <span class="preco">R$70.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <!--Botão de Adicionar a sacola-->
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <!--Descrição do produto-->
+                        <p class="product-short-description">Conjunto de moletom bege</p>
+                        <!--Preço com desconto-->
+                        <span class="price">R$70,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <!--Imagem dos produtos-->
+                    <div class="product-image">
+                        <!--Thumb / foto do produto-->
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto rosa 1.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto rosa claro</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto rosa claro</p>
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto roxo.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto roxo jaqueta e saia</h2>
+                                    <span class="preco">R$75.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto roxo jaqueta e saia</p>
+                        <span class="price">R$75,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto rosa escuro.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto canelado rosa</h2>
+                                    <span class="preco">R$60.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto canelado rosa</p>
+                        <span class="price">R$60,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto veludo.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto vinho de veludo</h2>
+                                    <span class="preco">R$50.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                        <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto vinho de veludo</p>
+                        <span class="price">R$50,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto verde.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto verde escuro</h2>
+                                    <span class="preco">R$80.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                        <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto verde escuro</p>
+                        <span class="price">R$80,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto xadrez.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto xadrez</h2>
+                                    <span class="preco">R$90.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                        <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto xadrez</p>
+                        <span class="price">R$90,00</span>
+                    </div>
+                </div>
+                
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto lilas.jpg" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto social lilas</h2>
+                                    <span class="preco">R$70.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto social lilas</p>
+                        <span class="price">R$70,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto verde canelado.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto canelado verde</h2>
+                                    <span class="preco">R$50.00</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto canelado verde</p>
+                        <span class="price">R$50,00</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto amarelo.jpg" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto social amarelo</h2>
+                                    <span class="preco">R$80.90</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto social amarelo</p>
+                        <span class="price">R$80,90</span>
+                    </div>
+                </div>
+
+                <!--Card dos produtos-->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="product-thumb produto-img" src="roupas c/conjuntos/conjunto cinza canelado.png" alt="imagem 1">
+                        <!--Carrinho-->
+                        <section class="shopp container">
+                            <!--Conteudo-->
+                            <div class="conteudo-loja">
+                                <!--Caixa 1-->
+                                <div class="produto-box">
+                                    <h2 class="produto-titulo">Conjunto cinza canelado</h2>
+                                    <span class="preco">R$70.99</span>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="card-btn add-carrinho">Adicionar a sacola</button>
+                    </div>
+                    <!--Informações do produto-->
+                    <div class="product-info">
+                        <p class="product-short-description">Conjunto cinza canelado</p>
+                        <span class="price">R$70,99</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!--Rodapé-->
+    <div class="rodape">
+        <div class="row">
+            <div class="col-4">
+                <div class="info">
+                    <h1>Informações da Empresa</h1>
+                    <p>A repono é uma varejista eletrônica brasileira de moda e estilo de vida comprometida em tornar a beleza da moda acessível a todos.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="contato">
+                    <h1>Atendimento ao Cliente</h1>
+                    <img src="img/instagram.png" alt="instagram">
+                    <p>Instagram: @repono</p> <br>
+                    <img src="img/whatsapp.png" alt="whatsapp">
+                    <p>Central de Atendimento (WhastsApp): (31) 99852-4123</p> <br>
+                    <img src="img/email.png" alt="email"> 
+                    <p>Mande-nos email em: contato@repono.com.br</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="pagamento">
+                    <h1>Formas de Pagamento Aceitas</h1>
+                    <img src="img/cartao1.png" alt="mastercard">
+                    <img src="img/cartao2.png" alt="visa">
+                    <img src="img/cartao6.png" alt="pix">
+                    <img src="img/cartao5.png" alt="paypal">
+                    <img src="img/cartao3.png" alt="boleto">
+                    <img src="img/cartao4.png" alt="maestro">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="fim">
+                    <p>&#169; 2022–2023 Repono. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Links do JavaScript-->
+    <script src="js/carrossel.js"></script>
+    <script src="js/senha.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/cabecalho.js"></script>
+    <script src="js/descer-menu.js"></script>
+</body>
+</html>

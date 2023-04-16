@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/produto.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <title>Repono - Produto</title>
+</head>
+<body>
+    <!-- Início Cabeçalho -->
+    <header>
+        <div id="navbar">
+            <a href="inicial.html"><img class="logo" src="img/repono2.png" alt="logo"></a>
+            <a href="inicial.html"><img class="logo2" src="img/repono4.png" alt="logo"></a>
+            <input id="pesquisa" type="text" placeholder="Pesquisar">
+            <a id="user" class="cad" href="#" target="_self" ><span class="material-symbols-outlined">account_circle</span></a>
+            <a id="carrinho-icone" class="cad" href="#" target="_self"><span class="material-symbols-outlined">shopping_cart</span></a>
+            <a href="#" class="menu-bars cad" id="show-menu">
+                <span class="material-symbols-outlined">menu</span>
+            </a>
+        </div>
+        <nav id="nav-menu">
+            <ul class="nav-menu-items">
+                <div id="navbar-toggle">
+                    <a href="#" class="menu-bars" id="hide-menu">
+                        <span class="material-symbols-outlined nav-icon">menu</span>
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="dropdown">
+                        <button onclick="document.location='feminino.html'"  class="dropbtn nav-text">Feminino <span id="mobile-btn" class="material-symbols-outlined">expand_more</span></button>
+                        <div class="dropdown-content">
+                            <a href="feminino.html#blusas">Blusas</a>
+                            <a href="feminino.html#calcas">Calças</a>
+                            <a href="feminino.html#shorts">Shorts e Saias</a>
+                            <a href="feminino.html#vestidos">Vestidos</a>
+                            <a href="feminino.html#conjuntos">Conjuntos</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="document.location='masculino.html'" class="dropbtn nav-text">Masculino <span id="mobile-btn" class="material-symbols-outlined">expand_more</span></button>
+                        <div class="dropdown-content">
+                            <a href="masculino.html#blusas">Blusas</a>
+                            <a href="masculino.html#camisas">Camisas</a>
+                            <a href="masculino.html#conjuntos">Conjuntos</a>
+                            <a href="masculino.html#bermudas">Bermudas</a>
+                            <a href="masculino.html#calcas">Calças</a>
+                        </div>
+                    </div>
+                    <button onclick="document.location='colecao.html'" class="dropbtn nav-text">Coleção</button>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <!-- Fim Cabeçalho -->
+
+    <main>
+        <!-- Início Modal Cadastro e Login -->
+        <div id="myModal" class="modal">
+            <!--Conteúdo do modal-->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Já possui uma conta?</h3>
+                <button class="bt" onclick="showFieldset('login', 'cadastro')">Sim</button>
+                <button class="bt" onclick="showFieldset('cadastro', 'login')">Não</button>
+                <form action=""> <!--Ação do botão-->
+                    <!--Título-->
+                        <fieldset id="cadastro">
+                            <h2>Crie Sua Conta</h2>
+                            <!--Formulário-->
+                            <label for="nome"><strong>Nome:</strong></label>
+                            <input type="text" placeholder="Nome">
+                            <label for="email"><strong>Email:</strong></label>
+                            <input type="text" placeholder="Email">
+                            <label for="senha"><strong>Senha:</strong></label>
+                            <input id="senha" type="password" placeholder="Senha">
+                            <!--Olho e função JS-->
+                            <i class="material-symbols-outlined" id="olho" onclick="toggle()">visibility</i>
+                            <!--Botão de criar conta-->
+                            <input class="btn" type="button" value="Criar Conta">
+                        </fieldset>
+                        <fieldset id="login">
+                            <h2>Faça Login</h3>
+                            <!--Formulário-->
+                            <label for="femail"><strong>E-mail:</strong></label>
+                            <input type="email" placeholder="Email"><br>
+                            <label for="fsenha"><strong>Senha:</strong></label>
+                            <input id="senha2" type="password" placeholder="Senha">
+                            <!--Olho e função JS-->
+                            <i class="material-symbols-outlined" id="olho2" onclick="toggle2()">visibility</i>
+                            <!--Botão de entrar-->
+                            <input class="btn" type="button" value="Entrar" onclick="logar(); return false">
+                        </fieldset>
+                </form>
+            </div>
+        </div>
+        <!-- Fim Modal Cadastro e Login -->
+
+        <!-- Início Carrinho -->
+        <!--nav-->
+        <div class="nav container">
+            <!--carrinho-->
+            <div class="carrinho">
+                <h2 class="carrinho-titulo">Seu Carrinho</h2>
+                <!--Conteudo-->
+                <div class="carrinho-conteudo"></div>
+                <!--Total-->
+                <div class="total">
+                    <div class="total-titulo">Total</div>
+                    <div class="total-preco">R$0.00</div>
+                </div>
+                <!--Botão-->
+                <button type="botao" class="btn-comprar" onclick="document.location='pagamento.html'">Comprar agora</button>
+                <!--Fechar carrinho-->
+                <span id="fechar-carrinho">&times;</span>
+            </div>
+        </div>
+        <!-- Fim Carrinho -->
+
+        <!-- Imagens do produto -->
+        <div class="row">
+            <div class="col left-col">
+                <!-- Imagem pricipal -->
+                <div class="zoom-container" id="container">
+                    <img onmouseover="zoomImg()" id="myImg" src="roupas c/blusas/croped rosa.png" alt="imagem principal">
+                </div>
+                <!-- Imagens miniaturas -->
+                <div>
+                    <img onmouseover="trocar(this)" src="roupas c/blusas/croped rosa 2.png" alt="imagem 1" class="product-thumbnail">
+                    <img onmouseover="trocar(this)" src="roupas c/blusas/croped rosa.png" alt="imagem 2" class="product-thumbnail">
+                    <img onmouseover="trocar(this)" src="" alt="" class="product-thumbnail">
+                </div>
+            </div>
+            
+            <!-- Informações sobre a roupa -->
+            <div class="col right-col">
+                <div class="produto-descricao col-6">
+                    <h1 class="produto-nome">Cropped Los Angeles</h1>
+                    <p>Vendido e entregue por Repono!</p>
+                    <span class="produto-preco">R$ 25.00</span>
+                    <br>
+
+                    <label class="produto-tamanho-label" for="size">Tamanho:</label>
+                    <!-- Seleção de tamanhos da roupa -->
+                    <select id="size" name="size">
+                        <option value="select" disabled selected>Selecione</option>
+                        <option value="small">P</option>
+                        <option value="medium">M</option>
+                        <option value="large">G</option>
+                        <option value="big">GG</option>
+                    </select>
+                    <br>
+
+                <!-- Botão de adicionar ao carrinho -->
+                <br><button class="sacola add-carrinho">Adicione a Sacola</button>
+                <section class="shopp container">
+                    <div class="conteudo-loja">
+                        <div class="produto-box">
+                            <img src="roupas c/blusas/croped rosa.png" alt="" class="produto-img" style="display: none;">
+                            <h2 class="produto-titulo">Cropped Los Angeles</h2>
+                            <span class="preco">R$ 25.00</span>
+                        </div>
+                    </div>
+                </section><br>
+                
+                <!-- Descrição da roupa -->
+                <div class="roupa-descricao">
+                    <h3 class="des"><strong>Descrição</strong></h3> <button onclick="myFunction()" id="myBtn"> + </button> <span id="mais">
+                        <table>
+                            <tr><td>Cor: Rosa</td></tr>
+                            <tr><td>Tecido: Algodão</td></tr>
+                            <tr><td>Estilo: Casual</td></tr>
+                            <tr><td>Estampa: lisa</td></tr>
+                            <tr><td>Gola: Não</td></tr> 
+                            <tr><td>Manga: Regular</td></tr>
+                            <tr><td>Comprimento: Regular</td></tr>  
+                            <tr><td>Tipo de Ajuste: Regular</td></tr>
+                        </table><br>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!--Rodapé-->
+    <div class="rodape">
+        <div class="row">
+            <div class="col-4">
+                <div class="info">
+                    <h1>Informações da Empresa</h1>
+                    <p>A repono é uma varejista eletrônica brasileira de moda e estilo de vida comprometida em tornar a beleza da moda acessível a todos.</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="contato">
+                    <h1>Atendimento ao Cliente</h1>
+                    <img src="img/instagram.png" alt="instagram">
+                    <p>Instagram: @repono</p> <br>
+                    <img src="img/whatsapp.png" alt="whatsapp">
+                    <p>Central de Atendimento (WhastsApp): (31) 99852-4123</p> <br>
+                    <img src="img/email.png" alt="email"> 
+                    <p>Mande-nos email em: contato@repono.com.br</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="pagamento">
+                    <h1>Formas de Pagamento Aceitas</h1>
+                    <img src="img/cartao1.png" alt="mastercard">
+                    <img src="img/cartao2.png" alt="visa">
+                    <img src="img/cartao6.png" alt="pix">
+                    <img src="img/cartao5.png" alt="paypal">
+                    <img src="img/cartao3.png" alt="boleto">
+                    <img src="img/cartao4.png" alt="maestro">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="fim">
+                    <p>&#169; 2022–2023 Repono. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Link do JavaScript-->
+    <script src="js/produto.js"></script>
+    <script src="js/senha.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/cabecalho.js"></script>
+    <script src="js/carrinho.js"></script>
+</body>
+</html>

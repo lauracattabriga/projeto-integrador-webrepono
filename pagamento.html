@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/pagamento.css">
+    <title>Repono - Pagamento</title>
+</head>
+<body>
+    <!-- Cabeçalho-->
+    <header> 
+        <a href="#"><img src="../imgs/logo.png" alt="logo"></a>
+    </header>
+    <!--Identificação do usuário  -->
+
+<!--Identificação do usuário  -->
+
+<div id="container">
+
+    <div class="container-pess">
+        <div class="pess-inform">
+            <!-- box de identificação  do usuário-->
+                <div class="pess-title">
+                    <h3> 1. Identificação </h3>
+                </div>
+                <div class="container-content">
+                    <div class="pess-dados">
+
+                        <span class="pess-dados-t2"> Dados pessoais </span>
+                        <br>
+                        <span style="font-size: 11px;"> Nome completo</span>
+                        <br>
+                        <span> Administrador </span>
+                        <br>
+                        <span  style="font-size: 11px;"> Email </span>
+                        <br>
+                        <span> admin@repono.com </span>
+                    </div>
+                    <div class="container-content-ende">
+                        <!-- Box de endereço do usuário -->
+                        <span class="pess-dados-t2"> Endereço para entrega </span>
+                        <br>
+                        <div class="pess-ende">
+                            <span class="pess-dados-t2-cep"> Pesquisa de CEP </span> <!-- Adicionar js do CEP -->
+                        <br>
+                        <div class="container-boxCep">
+                            <label for="cepUser"></label>
+                            <input type="tel" maxlength="9" id="cepUser" required placeholder="Busque aqui..">
+
+                            
+
+                            <div id="numberUser">
+                                <input type="text" id="numberHome" class="userInfoHome" placeholder="Número *" required>
+                                <input type="text" id="infoHome" class="userInfoHome" placeholder="Complemento *" required>
+                            </div>
+
+                            <input type="text" readonly id="cepBuscaUser" required>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Escolha de frete -->
+                    <div class="container-entrega-aviso">
+                        <!--Informações da entrega -->
+                        <span class="entrega-aviso-span"> 
+                            
+                            Informamos que a sua encomenda poderá ficar aguardando retirada em uma agência mais próxima caso o seu endereço tenha restrição de entrega ou seja de difícil acesso.
+
+                        </span>
+
+                        <br>
+
+                        <br>
+
+                        <span class="entrega-aviso-span"> * Prazo de entrega após postagem da encomenda. </span>
+                    </div>
+
+                    <div class="container-button">
+                        <!-- butão para finalizar o pagamento -->
+                        <button type="button" name="button" id="button-user-f"> Ir para o pagamento </button>
+
+                    </div>
+                    
+            </div>
+        </div>
+    </div>
+    <!-- Escolha de forma de pagamento-->
+    <div class="container-pess-2" id="cardPagBox">
+        <div class="pess-inform">
+            <div class="pess-title">
+                <h3> 2. Pagamento </h3>
+            </div>
+
+        <div id="container-pag">
+            <div class="pess-formPag">
+                <span class="pess-dados-t2">
+                     Escolha sua forma de pagamento
+                </span>
+            </div>
+            <div class="pagForm-icon" id="cardCredit">
+                <!-- Box de cartão de crédito-->
+                <div class="pagFormTitle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/423/423468.png" alt="" width="18px" height="20px">
+                    <span> Cartão de Crédito </span>
+                </div>
+            </div>
+            <div class="pagForm-icon" id="pixPag">
+                <!-- Box de pix-->
+                <div class="pagFormTitle">
+                    <img src="../imgs/logo-pix-png-920x920-removebg-preview.png" alt="" width="18px" height="18px">
+                    <span> Pix à vista </span>
+                </div>
+            </div>
+            <div class="pagForm-icon" id="bolPag">
+                <!-- box de boleto bancário -->
+                <div class="pagFormTitle">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25350.png" alt="" width="18px">
+                    <span> Boleto bancário à vista </span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal do pagamento de cartão de crédito-->
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+
+            <div class="modal-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/423/423468.png" alt="" width="32px" height="32px">
+                    <span> Cartão de Crédito </span>
+                    <button id="close-modal">&times;</button>
+            </div>
+            <!-- modal do pagamento de cartão de crédito -->
+            <div class="modal-body">
+                <form action="#">
+                        <label for="cardusernumber">Número do cartão</label>
+                        <span> <img src="../imgs/cartao1.png" alt="" width="32px" height="16px"></span>
+                        <span> <img src="../imgs/cartao2.png" alt="" width="32px" height="16px"></span>
+                        <span> <img src="../imgs/cartao4.png" alt="" width="32px" height="16px"></span>
+                        <input type="text" pattern="[0-9]{16,19}" maxlength="19" placeholder="8888 8888 8888 8888" required class="cardUserInfo">
+                        <label for="cardusername">Nome Completo</label>
+                        <input placeholder="Digite aqui..." type="text" required class="cardUserInfo">
+                        <br>
+                        <label for="cardusercpf">CPF do Titular</label>
+                        <input placeholder="Digite aqui..." type="text" required class="cardUserInfo" maxlength="14">
+                        <span class="carduservalidade" > Validade: </span>
+                        <select id="cardusermes" required>
+                            <option value="" class="hide">Mês</option>
+                            <option value="01">Janeiro</option>
+                            <option value="02">Fevereiro</option>
+                            <option value="03">Março</option>
+                            <option value="04">Abril</option>
+                            <option value="05">Maio</option>
+                            <option value="06">Junho</option>
+                            <option value="07">Julho</option>
+                            <option value="08">Agosto</option>
+                            <option value="09">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                            </select>
+                            <select id="carduserano" required> <!-- Card user Ano -->
+                            <option value="" class="hide">Ano</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                            <option value="2033">2033</option>
+                            </select>
+                            <br>
+                            <label for="cardUserCvcLabel">CVC</label>
+                            <input type="n" class="cardUserCvc" maxlength="3" required placeholder="9999">
+                            <a href="pedido-finalizado.html"><button class="btn">Finalizar Pedido</button></a>
+                </form>
+            </div>
+        </div>  
+
+        <!-- Modal de pagamento pelo pix -->
+
+        <div id="fadePix" class="hide"></div>
+        <div id="modalPix" class="hide">
+
+            <div class="modal-header">
+                <img src="../imgs/logo-pix-png-920x920-removebg-preview.png" alt="" width="32px" height="32px">
+                    <span> Pix à vista </span>
+                    <button id="pixCloseModal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+
+               <span class="pagPixBox-valor"> Valor do pedido: valor-pedido </span>
+               <span class="pagPixBox-desconto"> Desconto de 10% para o pagamento à vista já aplicado nesse valor. </span>
+
+                <div id="pagPixBox-qrcode">
+                    <img src="data:image/png;base64,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" alt="QR CODE PIX">
+
+                </div>
+                <!-- código pix -->
+                <div id="pagPixBox-codPix">
+
+                    <span id="pagPixBox-codPixInfo">
+                        
+                        00020126360014BR.GOV.BCB.PIX0114412686380001955204000053039865802BR5906REPONO6011SETE LAGOAS610835700-85462140510REPONOSHOP63041FF7
+
+                    </span>
+
+                </div>
+
+                <!-- instruções do qr code  -->
+               <ul class="pagPixBox-ins">
+                    <li class="pagPixbox-insItem">Após a finalização da compra, um QR code será exibido e você poderá pagar com o Pix do seu banco;</li>
+                    <li class="pagPixbox-insItem">Não faça depósito ou transferência entre contas a não ser via Pix;</li>
+               </ul>
+
+               <div id="pagPixBox-button">
+
+                    <a href="pedido-finalizado.html"><button id="pagPixBox-bnt"> Finalizar pedido </button></a>
+
+               </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- modal de pagamento pelo boleto -->
+    <div id="fadeBol" class="hide"></div>
+        <div id="modalBol" class="hide">
+
+            <div class="modal-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25350.png" alt="" width="32px" height="32px">
+                    <span> Boleto Bancário </span>
+                    <button id="bolCloseModal">&times;</button>
+            </div>
+            <!-- pagamento boleto -->
+            <div class="modal-body">
+                <div id="content-boleto">
+                        <a href="../imgs/3e15ca873d85adc1e3d6eebde65a69d5.png" id="imprimir_boleto" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25350.png" alt="boleto" width="18px" style="margin-right: 5px; margin-bottom: 3px;">  IMPRIMIR BOLETO </a>
+                </div>
+                <div id="content-boxBoleto">
+                    <div id="content-boxBoleto-info">
+                        <span class="boxBoleto-cn">Deseja pagar online? Utilize o código de barras
+                        </span>
+                    </div>
+                    <div id="container-"><span class="codBarra-boleto"> 130683189175511941351</span></div>
+                    <div id="container-infoBoleto">
+                        <ul class="pagPixBox-ins">
+                            <li class="pagPixbox-insItem">Data de vencimento: 13/04/2023;</li>
+                            <li class="pagPixbox-insItem">O boleto pode demorar até <strong>2 dias úteis para ser compensado</strong>;</li>
+                            <li class="pagPixbox-insItem">Você reberá um e-mail informando se o seu pedido foi aprovado.</li>
+                       </ul>
+                    </div>
+
+                    <a href="pedido-finalizado.html"><button id="pagBolBox-bnt"> Finalizar pedido </button></a>
+
+
+                </div>
+        </div>
+    </div>
+</div>
+
+<!-- carrinho card  -->
+<div class="container-pess-3">
+    <div class="pess-inform">
+        <div class="pess-title">
+            <h3> 3. Carrinho </h3>
+        </div>
+        <div class="container-carrinho">
+            <div class="carrinho-caixa">
+                <img src="../imgs/blusa beje.webp" alt="" class="carrinho-img">
+                <div class="detalhes-caixa">
+                    <div class="carrinho-produto-titulo"> Blusa Bege </div>
+                    <div class="carrinho-preco"> R$ 20,00</div>
+                    <input type="number" value="1" min="0" class="carrinho-quantidade">
+                </div>
+                <img src="../imgs/icons8-lixo-26.png" alt="" class="carrinho-remover">       
+            </div>
+        </div>
+        <div class="container-carrinho">
+            <div class="carrinho-caixa">
+                <img src="../imgs/blusa branca.webp" alt="" class="carrinho-img">
+                <div class="detalhes-caixa">
+                    <div class="carrinho-produto-titulo"> Blusa Branca </div>
+                    <div class="carrinho-preco"> R$ 20,00</div>
+                    <input type="number" value="1" min="0" class="carrinho-quantidade">
+                </div>
+                <img src="../imgs/icons8-lixo-26.png" alt="" class="carrinho-remover">
+            </div>
+        </div>
+
+    </div>
+
+</div   >
+</div>
+
+    <!-- Links do JavaScript -->
+    <script src="js/pagamento.js"></script>
+    <script src="js/cep.js"></script>
+    <script src="js/divs-pagamento.js"></script>
+</body>
+</html>

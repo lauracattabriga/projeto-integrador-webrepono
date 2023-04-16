@@ -1,0 +1,581 @@
+/*Fonte Montserrat importada do google*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*Configurações gerais da página*/
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Faz com que as linhas não colidam entre si*/
+.row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*Faz com que as colunas flutuem à esquerda com distância de 10px*/
+    [class*="col-"] {
+    float: left;padding: 10px;
+}
+
+/*Divide a tela em doze colunas, cada uma representa uma porcentagem diferente da tela.Para desktop */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/*Configurações do corpo da página*/
+body{
+    margin: 0;
+    background-color: #f2f2f2; 
+}
+
+/******************* Ínicio Cabeçalho *******************/
+header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+/*Ícone de mostrar o menu*/
+#navbar #show-menu {
+    float: right;
+}
+
+/*Barra de navegação*/
+#navbar {
+    background-color: #010101;
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+/*Ícone do menu hamburguer*/
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 40px;
+    color: #f2f2f2;
+}
+
+/*Navegação dentro do menu hamburguer quando desativada*/
+#nav-menu {
+    background-color: #010101;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 850ms;
+    z-index: 40;
+}
+
+/*Navegação dentro do menu hamburguer quando ativa*/
+#nav-menu.active {
+    right: 0;
+    transition: 350ms;
+}
+
+/*Botões de dentro do menu hamburguer*/
+.nav-text {
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    height: 50px;
+    padding: 1rem;
+}
+
+/*Links dos botões de dentro do menu hamburguer*/
+.nav-text a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+/*Hover pelos botões de dentro do menu hamburguer*/
+.nav-text:hover {
+    background-color: rgba(144, 144, 144, 0.219);
+    cursor: pointer;
+}
+
+/*Div dos items que ficam dentro do menu hamburguer*/
+.nav-menu-items {
+    width: 100%;
+}
+
+/*Ícone que fecha o menu hamburguer*/
+.nav-icon {
+    padding-right: 1rem;
+    color: #f2f2f2;
+    font-size: 40px;
+}
+
+/*Div do ícone que fecha o menu hamburguer*/
+#navbar-toggle {
+    background-color: #010101;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+/*Título h1 da div do ícone que fecha o menu hamburguer*/
+#navbar-toggle h1 {
+    color: #f2f2f2;
+}
+
+/*Links da div do ícone que fecha o menu hamburguer*/
+#navbar-toggle a {
+    text-decoration: none;
+}
+
+/*Seção onde ficam os itens do menu hamburguer*/
+.nav-section {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+/*Logo da Repono*/
+.logo {
+    width: 300px;
+    margin-left: 50px;
+}
+
+/*Barra de pesquisa*/
+#pesquisa{
+    width: 40%;
+    height: 40px;
+    background-color: #f2f2f2;
+    text-align: center;
+    border-radius: 50px;
+    color:#010101;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+/*Ícones do cabeçalho*/
+.cad{
+    text-align: right;
+    align-items: baseline;
+    margin: 0 auto;
+    display: block;
+    margin-right: 50px;
+}
+
+/*Ícones do cabeçalho*/
+.cad .material-symbols-outlined {
+    font-size: 40px;
+    color: #f2f2f2;
+}
+
+/*Menu dropdown*/
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/*Botões do menu dropdown*/
+.dropdown .dropbtn {
+    outline: none;
+    margin: 0;
+    padding: 14px 16px;
+}
+
+/*Conteúdo dentro do menu dropdown*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/*Liks do menu dropdown*/
+.dropdown-content a{
+    float: none;
+    color: #010101;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/*Hover do menu dropdown*/
+.dropdown:hover .dropdown-content {
+    display: block;
+    border: none;
+}
+
+/*Hover dos links do menu dropdown*/
+.dropdown-content a:hover {
+    background-color: #737373;
+    color: #f2f2f2;
+}
+
+/*Estilização dos botões do menu dropdown*/
+.dropbtn {
+    cursor: pointer;
+    height: 60px;
+    font-size: 23px;
+    border: transparent;
+    width: 100%;
+    background-color: #010101;
+    color: #f2f2f2;
+}
+
+/*Localização dos botões do menu dropdown*/
+.dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+/*Logo Repono para telas pequenas*/
+.logo2 {
+    display: none;
+}
+
+/*Responsividade para telas até 1200px*/
+@media screen and (max-width: 1200px) {
+    .logo {
+        width: 200px;
+    }
+    #pesquisa {
+        width: 30%;
+    }
+}
+
+/*Responsividade para telas até 800px*/
+@media screen and (max-width: 800px) {
+    .logo {
+        margin-left: 20px;
+    }
+    .cad .material-symbols-outlined {
+        font-size: 30px;
+    }
+}
+
+/*Responsividade para telas até 700px*/
+@media screen and (max-width: 700px) {
+    .logo {
+        width: 150px;
+    }
+    #pesquisa {
+        height: 30px;
+    }
+    .cad .material-symbols-outlined {
+        font-size: 25px;
+    }
+}
+
+/*Responsividade para telas até 600px*/
+@media screen and (max-width: 600px) {
+    #pesquisa {
+        width: 20%;
+    }
+    .logo2 {
+        display: block;
+        width: 50px;
+        margin-left: 20px;
+    }
+    .logo {
+        display: none;
+    }
+    .dropdown-content a{
+        display: none;
+    }
+    #mobile-btn {
+        display: none;
+    }
+}
+
+/*Responsividade para telas até 400px*/
+@media screen and (max-width:440px) {
+    #pesquisa {
+        display: none;
+    }
+}
+/******************* Fim Cabeçalho *******************/
+
+
+/******************** Início Configurações Gerais ********************/
+/*config carrossel repono*/
+.mySlides {
+    display: none;
+}
+
+/*Imagens do carrossel Repono*/
+img {
+    vertical-align: middle;
+}
+
+/*Container do slideshow*/
+.slideshow-container {
+    max-width: 99%;
+    position: relative;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 110px;
+}
+
+/*Animação de desbotamento*/
+.fade {
+    animation-name: fade;
+    animation-duration: 3.0s;
+}
+
+/*Animação de desbotamento*/
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Coleção */
+.container-colecao {
+    max-width: 1400px;
+    margin: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*Container dos itens da coleção*/
+.container-itens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,auto));
+    gap: 1.5rem;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*Estilização do card de cada produto*/
+.product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 550px;
+    margin-right: 40px;
+}
+
+/*Estilização dos elementos de cada produto*/
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+/*Estilização da imagem dos produtos*/
+.product-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Estilização do botão de adicionar a lista de desejos*/
+.card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+/*Opacidade do botão de adicionar a lista de desejos ao passar o mouse na imagem do produto*/
+.product-card:hover .card-btn {
+    opacity: 1;
+}
+
+/*Cor do botão de adicionar a lista de desejos ao passar o mouse em cima dele*/
+.card-btn:hover {
+    background:  #010101; /*Olhar a cor do botão*/
+    color: #fff;
+}
+
+/*Estilização das informações dos produtos*/
+.product-info {
+    width: 100%;
+    padding-top: 10px;
+}
+
+/*Marca do produto em letras maiúsculas*/
+.product-brand {
+    text-transform: uppercase
+}
+
+/*Estilização da descrição do produto*/
+.product-short-description {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+
+/*Estilização do preço com desconto*/
+.price {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none; 
+}
+
+/*Reponsividade para telas até 450px*/
+@media(max-width:450px){
+    .carousel-inner{
+        max-width: 100%;
+    }
+    .slide{
+        height: 250px;
+    }
+    #carousel-inner{
+        border: 2px solid black;
+    }
+    .product-card{
+        margin-left: 50px;
+        height: 450px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .card-btn {
+        opacity: 1;
+    }
+}
+
+/*Reponsividade para telas até 400px*/
+@media(max-width:400px){
+    .carousel-inner{
+        max-width: 100%;
+    }
+    .slide{
+        height: 250px;
+    }
+}
+
+/*Reponsividade para telas até 360px*/
+@media(max-width:360px){
+    .carousel-inner{
+        max-width: 100%;
+    }
+    .slide{
+        height: 250px;
+    }
+}
+
+
+/******************** Fim Configurações Gerais ********************/
+
+/******************** Ínicio Rodapé ********************/
+/*Configuração geral*/
+.rodape {
+    background-color: #010101;
+    color: #f2f2f2;
+    line-height: 1.7;
+    box-shadow: 0px 0px 0px 3px #0101013c;
+}
+
+/*Título h1*/
+.rodape h1 {
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/*Parágrafo*/
+.rodape p {
+    font-size: 17px;
+}
+
+/*Informações da empresa*/
+.info {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/*Atendimento ao cliente*/
+.contato {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*Imagens do atendimento ao cliente*/
+.contato img {
+    width: 35px;
+    display: inline;
+    margin-right: 10px;
+}
+
+/*Parágrafo do atendimento ao cliente*/
+.contato p {
+    display: inline;
+    line-height: 3;
+}
+
+/*Formas de pagamento aceitas*/
+.pagamento {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/*Imagens de formas de pagamento aceitas*/
+.pagamento img {
+    width: 120px;
+    padding: 20px;
+}
+
+.fim {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*Responsividade*/
+@media screen and (max-width:700px) {
+    .rodape .col-4 {
+        width: 100%;
+    }
+    .rodape .info {
+        margin-bottom: 50px;
+    }
+    .rodape .contato {
+        margin-bottom: 50px;
+    }
+    .rodape .contato {
+        width: 70%;
+    }
+}
+/******************** Fim Rodapé ********************/
